@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+	<!-- <meta content="ie=edge" http-equiv="X-UA-Compatible" /> -->
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <h2 class="title">密码生成器</h2>
+        <div id="box-passwordshow" class="box-item-bg" @click="y_copy">
+            <input type="text" readonly="readonly" v-cloak v-model="y_password" >
+			<input type="text" id="copyinput" v-cloak v-model="y_password" readonly="readonly" placeholder="密码显示框"/>
+            <p id="clickcopy">
+                <span v-if="iscopytext">点击复制</span>
+                <span v-else >复制成功</span>
+            </p>
+        </div>
+
+        <div id="box-length">
+            <p id="length-text">长度：<span id="length-show" v-cloak >{{ y_length }}</span></p>
+            <div id="length-control"  class="box-item-bg">
+                <span>4</span>
+                <input type="range" max="32" min="4" step="1" v-model="y_length" v-cloak > 
+                <span>32</span>
+            </div>
+        </div>
+
+        <div id="box-setting">
+			<div class="settings">
+			        <p class="settings-title">设置</p>
+			        <div class="settingsBox">
+			            <div class="setting box-item-bg">
+			                <input :checked="y_case"  id="uppercase" type="checkbox" @click="isCase">
+			                <label for="uppercase">包含大写</label>
+			            </div>
+			            <div class="setting box-item-bg">
+			                <input v-cloak :checked="y_lowCase"  id="lowercase" type="checkbox" @click="isLowcase">
+			                <label for="lowercase">包含小写</label>
+			            </div>
+			            <div class="setting box-item-bg">
+			                <input v-cloak :checked="y_num"  id="number" type="checkbox" @click="isNum">
+			                <label for="number">包括数字</label>
+			            </div>
+			            <div class="setting box-item-bg">
+			                <input v-cloak :checked="y_symbol"  id="symbol" type="checkbox" @click="isSym">
+			                <label for="symbol">包括符号</label>
+			            </div>
+			        </div>
+			    </div>	
+        </div>
+
+        <div id="box-submit" class="box-item-bg"  @click="y_submit" >
+            <input type="submit" value="生成密码">
+        </div>
+    </div>
+</body>
+	<script type="text/javascript" src="js/index.js"></script>
+</html>
