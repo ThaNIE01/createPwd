@@ -1,2 +1,10 @@
-# PasswordGenerator
-address：https://thanie01.github.io/pwdGenerator
+# 随机密码生成器
+这是地址：https://thanie01.github.io/pwdGenerator
+
+介绍：
+  使用vue.js制作的练习作品。
+  
+使用方法：
+  拖动滑块来调成需要的密码长度，在设置里边 开启/关闭 密码包含的样式用于组合，点击生成密码按钮之后，即可点击显示框里边生成的密码进行复制。
+
+
